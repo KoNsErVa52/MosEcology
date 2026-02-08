@@ -1,0 +1,153 @@
+        // Переменные для управления викториной
+        let currentQuiz = 'general';
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = [];
+        let currentQuizData = quizDataGeneral;
+        let isAnswerLocked = false; // НОВОЕ: Флаг, заблокирован ли выбор ответа
+
+        // Навигация между страницами
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Убираем активный класс со всех ссылок
+                document.querySelectorAll('.nav-link').forEach(item => {
+                    item.classList.remove('nav-active');
+                });
+                
+                // Добавляем активный класс текущей ссылке
+                this.classList.add('nav-active');
+                
+                // Скрываем все страницы
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Показываем выбранную страницу
+                const pageId = this.getAttribute('data-page');
+                
+                // Скрываем все страницы
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Показываем выбранную страницу
+                if (pageId === 'problems') {
+                    document.getElementById('problems').classList.add('active');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    // Скрываем детальное описание проблемы при переходе на страницу
+                    hideProblemDetail();
+                } else if (pageId === 'quiz') {
+                    document.getElementById('quiz').classList.add('active');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    initializeQuizSelector();
+                } else if (pageId === 'actions') {
+                    document.getElementById('actions').classList.add('active');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else if (pageId === 'page2') {
+                    document.getElementById('page2').classList.add('active');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else if (pageId === 'eco-lab') {
+                    document.getElementById('eco-lab').classList.add('active');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else if (pageId === 'eco-master') {
+                    document.getElementById('eco-master').classList.add('active');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    document.getElementById('home').classList.add('active');
+                    if (pageId === 'solutions') {
+                        document.querySelector('button[data-tab="air"]').click();
+                        window.scrollTo({
+                            top: document.getElementById('problems-section').offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Функционал вкладок
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Убираем активный класс со всех кнопок
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Добавляем активный класс текущей кнопке
+                this.classList.add('active');
+                
+                // Скрываем все вкладки
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Показываем выбранную вкладку
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Функции для отображения детальной информации о проблемах
+        function showProblemDetail(problemId) {
+            const detail = problemDetails[problemId];
+            if (!detail) return;
+            
+            // Скрываем карточки с проблемами
+            document.querySelector('.problem-grid').style.display = 'none';
+            
+            // Показываем детальное описание
+            const detailContainer = document.getElementById('problem-detail');
+            const detailContent = document.getElementById('problem-detail-content');
+            
+            detailContent.innerHTML = `
+                <h2>${detail.title}</h2>
+                ${detail.content}
+            `;
+            
+            detailContainer.style.display = 'block';
+            
+            // Прокручиваем к детальному описанию
+            window.scrollTo({
+                top: detailContainer.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+
+        function hideProblemDetail() {
+            // Показываем карточки с проблемами
+            document.querySelector('.problem-grid').style.display = 'grid';
+            
+            // Скрываем детальное описание
+            document.getElementById('problem-detail').style.display = 'none';
+            
+            // Прокручиваем к началу раздела
+            window.scrollTo({
+                top: document.querySelector('.section').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
