@@ -33,3 +33,10 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+/* Dropdown адаптация для мобильных */
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                border: 1px solid #e0e0e0;
+                margin-top: 10px;
+            }
