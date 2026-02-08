@@ -1,0 +1,140 @@
+ <!-- Страница "Проблемы" с отдельными разделами -->
+    <div id="problems" class="page">
+        <section class="hero" style="background: 0000ff;">
+            <div class="container">
+                <h1>Экологические проблемы Москвы</h1>
+                <p>Узнайте о главных экологических вызовах, с которыми сталкивается столица, и их причинах.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Основные экологические проблемы</h2>
+                
+                <div class="problem-grid">
+                    <!-- Загрязнение воздуха -->
+                    <div class="problem-card" id="air-pollution-card">
+                        <div class="problem-header">
+                            <h3>Загрязнение воздуха</h3>
+                        </div>
+                        <div class="problem-body">
+                            <p>Москва сталкивается с серьезными проблемами загрязнения воздуха, особенно в районах с высокой транспортной нагрузкой и промышленными зонами.</p>
+                            <ul>
+                                <li>Более 5 миллионов автомобилей ежедневно</li>
+                                <li>Промышленные предприятия в юго-восточных районах</li>
+                                <li>Строительная пыль от многочисленных строек</li>
+                                <li>Отопление зданий в холодное время года</li>
+                            </ul>
+                            <div class="problem-buttons">
+                                <a href="#" class="problem-btn" onclick="showProblemDetail('air-pollution')">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Загрязнение воды -->
+                    <div class="problem-card" id="water-pollution-card">
+                        <div class="problem-header">
+                            <h3>Загрязнение воды</h3>
+                        </div>
+                        <div class="problem-body">
+                            <p>Качество воды в Москве-реке и других водоемах остается серьезной проблемой, несмотря на значительные улучшения.</p>
+                            <ul>
+                                <li>Промышленные и коммунальные стоки</li>
+                                <li>Ливневые стоки с нефтепродуктами</li>
+                                <li>Загрязнение пластиком и мусором</li>
+                            </ul>
+                            <div class="problem-buttons">
+                                <a href="#" class="problem-btn" onclick="showProblemDetail('water-pollution')">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Загрязнение почвы -->
+                    <div class="problem-card" id="soil-pollution-card">
+                        <div class="problem-header">
+                            <h3>Загрязнение почвы</h3>
+                        </div>
+                        <div class="problem-body">
+                            <p>Почва в Москве загрязняется тяжелыми металлами, химикатами и отходами, что влияет на здоровье горожан и экосистемы.</p>
+                            <ul>
+                                <li>Загрязнение батарейками и электроникой</li>
+                                <li>Тяжелые металлы от транспорта</li>
+                                <li>Химикаты с промышленных зон</li>
+                                <li>Нефтепродукты с АЗС и автостоянок</li>
+                            </ul>
+                            <div class="problem-buttons">
+                                <a href="#" class="problem-btn" onclick="showProblemDetail('soil-pollution')">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Проблемы с отходами -->
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <h3>Проблемы с отходами</h3>
+                        </div>
+                        <div class="problem-body">
+                            <p>Ежегодно Москва производит около 8 миллионов тонн твердых коммунальных отходов с низким процентом переработки.</p>
+                            <ul>
+                                <li>Недостаточная переработка (25%)</li>
+                                <li>Полигоны в Подмосковье</li>
+                                <li>Опасные отходы (батарейки, электроника)</li>
+                                <li>Пластиковое загрязнение</li>
+                            </ul>
+                            <div class="problem-buttons">
+                                <a href="#" class="problem-btn" onclick="showProblemDetail('waste-problem')">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Дефицит зеленых зон -->
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <h3>Дефицит зеленых зон</h3>
+                        </div>
+                        <div class="problem-body">
+                            <p>Несмотря на наличие парков, некоторые районы испытывают недостаток зеленых насаждений, что усугубляет экологические проблемы.</p>
+                            <ul>
+                                <li>Плотная застройка новых районов</li>
+                                <li>Старые деревья требуют замены</li>
+                                <li>Тепловой остров в центре города</li>
+                                <li>Шумовое загрязнение</li>
+                            </ul>
+                            <div class="problem-buttons">
+                                <a href="#" class="problem-btn" onclick="showProblemDetail('green-deficit')">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Вода в Москве -->
+                    <div class="problem-card" id="moscow-water-card">
+                        <div class="problem-header">
+                            <h3>Вода в Москве</h3>
+                        </div>
+                        <div class="problem-body">
+                            <p>Специфические проблемы водных ресурсов Москвы, включая качество питьевой воды и состояние водоемов.</p>
+                            <ul>
+                                <li>Проблемы малых рек (Яуза, Сетунь)</li>
+                                <li>Ливневая канализация</li>
+                                <li>Питьевое водоснабжение</li>
+                            </ul>
+                            <div class="problem-buttons">
+                                <a href="#" class="problem-btn" onclick="showProblemDetail('moscow-water')">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Детальное описание проблем (будет заполняться JavaScript) -->
+                <div id="problem-detail" style="display: none;">
+                    <div class="content-card">
+                        <div id="problem-detail-content"></div>
+                        <div class="problem-buttons">
+                            <button class="problem-btn" onclick="hideProblemDetail()">Назад к списку</button>
+                            <a href="#" class="problem-btn blue nav-link" data-page="actions">Что делается для решения</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
