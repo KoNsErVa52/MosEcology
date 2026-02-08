@@ -1,0 +1,35 @@
+/* Dropdown стили */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(19, 131, 19);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(255, 0, 0, 0.2);
+            z-index: 101;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #296d2e;
+            color: #ffffff;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
