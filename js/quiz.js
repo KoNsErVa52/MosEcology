@@ -1,4 +1,45 @@
-unction initializeQuizSelector() {
+        // НОВОЕ: Модальное окно для терминов
+        const termModal = document.getElementById('termModal');
+        const termModalTitle = document.getElementById('termModalTitle');
+        const termModalContent = document.getElementById('termModalContent');
+
+        // Функция открытия модального окна для терминов
+        function openTermModal(termId) {
+            const term = termData[termId];
+            if (!term) return;
+            
+            termModalTitle.textContent = term.title;
+            
+            // Формируем содержимое модального окна
+            let examplesHtml = '';
+            if (term.examples && term.examples.length > 0) {
+                examplesHtml = `
+                    <div class="term-modal-example">
+                        <h4>Примеры:</h4>
+                        <ul>
+                            ${term.examples.map(example => `<li>${example}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            termModalContent.innerHTML = `
+                <p><strong>Определение:</strong> ${term.fullDefinition}</p>
+                ${examplesHtml}
+                <p><strong>Категория:</strong> <span class="term-category">${term.category}</span></p>
+                <p style="margin-top: 20px; font-style: italic; color: #666;">Нажмите на другие термины на странице, чтобы узнать их определения!</p>
+            `;
+            
+            termModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Функция закрытия модального окна для терминов
+        function closeTermModal() {
+            termModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+function initializeQuizSelector() {
             const quizSelector = document.getElementById('quizSelector');
             quizSelector.innerHTML = `
                 <button class="quiz-selector-btn active" data-quiz="general">Общая экология Москвы</button>
