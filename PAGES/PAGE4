@@ -1,0 +1,163 @@
+   <!-- Страница "Викторина" -->
+    <div id="quiz" class="page">
+        <section class="hero" style="background:0000ff;">
+            <div class="container">
+                <h1>Викторина по экологии Москвы</h1>
+                <p>Проверьте свои знания об экологической ситуации в столице и способах её улучшения!</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container quiz-container">
+                <h2 class="section-title">Экологическая викторина</h2>
+                
+                <!-- НОВОЕ: Выбор викторины -->
+                <div class="quiz-selector" id="quizSelector">
+                    <button class="quiz-selector-btn active" data-quiz="general">Общая экология Москвы</button>
+                    <button class="quiz-selector-btn" data-quiz="waste">Переработка отходов</button>
+                    <button class="quiz-selector-btn" data-quiz="forest">Экология леса</button>
+                </div>
+                
+                <div id="quizContent">
+                    <!-- Контент викторины будет загружен через JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!--Экологические термины -->
+        <section class="section" id="terms-section">
+            <div class="container">
+                <h2 class="section-title"> Экологические термины</h2>
+                <div class="content-card">
+                    <p>Понимание экологических терминов поможет вам лучше разбираться в проблемах окружающей среды и способах их решения. Вот основные понятия, которые нужно знать:</p>
+                    
+                    <div class="terms-grid">
+                        <div class="term-card" data-term="ecology">
+                            <div class="term-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3>Экология</h3>
+        
+                            <span class="term-category">Основные понятия</span>
+                        </div>
+                        
+                        <div class="term-card" data-term="sustainable-development">
+                            <div class="term-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <h3>Устойчивое развитие</h3>
+                            
+                            <span class="term-category">Развитие</span>
+                        </div>
+                        
+                        <div class="term-card" data-term="pdk">
+                            <div class="term-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3>ПДК (Предельно допустимая концентрация)</h3>
+                            
+                            <span class="term-category">Загрязнение</span>
+                        </div>
+                        
+                        <div class="term-card" data-term="eutrophication">
+                            <div class="term-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <h3>Эвтрофикация</h3>
+                            
+                            <span class="term-category">Вода</span>
+                        </div>
+                        
+                        <div class="term-card" data-term="biodiversity">
+                            <div class="term-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h3>Биоразнообразие</h3>
+                            
+                            <span class="term-category">Биология</span>
+                        </div>
+                        
+                        <div class="term-card" data-term="circular-economy">
+                            <div class="term-icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                            <h3>Циркулярная экономика</h3>
+                            
+                            <span class="term-category">Экономика</span>
+                        </div>
+                        
+                        <div class="term-card" data-term="greenhouse-effect">
+                            <div class="term-icon">
+                                <i class="fas fa-temperature-high"></i>
+                            </div>
+                            <h3>Парниковый эффект</h3>
+                            
+                            <span class="term-category">Климат</span>
+                        </div>
+                        
+                        <div class="term-card" data-term="heat-island">
+                            <div class="term-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h3>Тепловой остров</h3>    
+                            <span class="term-category">Город</span>
+                        </div>
+                        <div class="term-card" data-term="biodegradation">
+                            <div class="term-icon">
+                                <i class="fas fa-biohazard"></i>
+                            </div>
+                            <h3>Биодеградация</h3>
+                           
+                            <span class="term-category">Разложение</span>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Дополнительные термины:</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; cursor: pointer;" class="term-card-small" data-term="reclamation">
+                            <h4 style="color: #2e7d32; margin-bottom: 8px;">Рекультивация</h4>
+                            
+                        </div>
+                        
+                        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; cursor: pointer;" class="term-card-small" data-term="protected-area">
+                            <h4 style="color: #2e7d32; margin-bottom: 8px;">ООПТ (ООПТ)</h4>
+                            
+                        </div>
+                        
+                        <div style="background-color: #f9f9f9; padding: 15px; border-radius= 8px; cursor: pointer;" class="term-card-small" data-term="ecological-footprint">
+                            <h4 style="color: #2e7d32; margin-bottom: 8px;">Экологический след</h4>
+                           
+                        </div>
+                        
+                        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; cursor: pointer;" class="term-card-small" data-term="anthropogenic-impact">
+                            <h4 style="color: #2e7d32; margin-bottom: 8px;">Антропогенное воздействие</h4>
+                            
+                        </div>
+                        
+                        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; cursor: pointer;" class="term-card-small" data-term="green-economy">
+                            <h4 style="color: #2e7d32; margin-bottom: 8px;">Зеленая экономика</h4>
+                            
+                        </div>
+                        
+                        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; cursor: pointer;" class="term-card-small" data-term="ecosystem-services">
+                            <h4 style="color: #2e7d32; margin-bottom: 8px;">Экосистемные услуги</h4>
+                            
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background-color: #e8f5e9; border-radius: 10px;">
+                        <h3 style="color: #2e7d32;">Как использовать эти термины?</h3>
+                        <p>Изучение экологических терминов поможет вам:</p>
+                        <ul>
+                            <li>Лучше понимать экологические проблемы и их причины</li>
+                            <li>Эффективно общаться с экологами и специалистами</li>
+                            <li>Грамотно формулировать свои мысли об экологии</li>
+                            <li>Читать и понимать научные и популярные статьи по экологии</li>
+                            <li>Участвовать в дискуссиях и принимать обоснованные решения</li>
+                        </ul>
+                        <p style="margin-top: 15px; font-weight: bold; color: #2e7d32;">Нажмите на любой термин, чтобы увидеть его определение!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
