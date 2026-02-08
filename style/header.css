@@ -1,0 +1,56 @@
+header {
+            background: linear-gradient(135deg, #25ac2c 0%, #25ac2c 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(255, 8, 8, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .spacer {
+            height: 50px;
+        }
+        .park-description {
+            font-size: 17px;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover, .nav-active {
+            background-color: rgba(255, 0, 0, 0);
+        }
